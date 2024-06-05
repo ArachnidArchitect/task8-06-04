@@ -1,3 +1,16 @@
+let input = document.querySelector('input')
+let button = document.querySelector('button')
+let display = document.querySelector('h2')
+
+
+
+button.addEventListener('click', ()=>{
+    let tempStorage = input.value.split(',')
+    console.log(input.value)
+    console.log(tempStorage)
+    rgbToHex(tempStorage[0],tempStorage[1],tempStorage[2])
+})
+
 
 function rgbToHex(r, g, b) {
     if ((r>255 || g>255 || b >255) || (r<0 || g<0 || b <0)) {
@@ -61,7 +74,7 @@ function rgbToHex(r, g, b) {
 
     }
 console.log(hex)
+display.innerText = hex
     }
     
 }
-rgbToHex(97,51,255)
